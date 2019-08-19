@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Person from './Person/Person';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.props = props;
+  }
+  render() {
+    return (
+      <div className="appie">
+        <h1>Hello there </h1>
+        <p>I'm {this.props.name} and am {this.props.age} years old</p>
+        <Person>I do here</Person>
+      </div>
+    )
+    //    return React.createElement('div', { className: 'appie' }, React.createElement('h1', null, 'Hi there'), React.createElement('p', null, 'I\'m here'));
+  }
 }
 
 export default App;
