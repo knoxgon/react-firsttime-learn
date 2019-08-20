@@ -1,16 +1,17 @@
 import React from 'react';
 
 export default class Person extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor(props, state) {
+    super(props, state);
     this.props = props;
+    this.state = state;
   }
   render() {
     return (
       <div className="person">
-        <h3>Little bit information about myself</h3>
-        <p>I was not always easy to get around</p>
-        <p>{this.props.children}</p>
+        <h3>I'm {this.props.name}</h3>
+        <p onClick={this.props.click}>Age: {this.props.age}</p>
+        <input onChange={this.props.change} value={this.props.name}/>
       </div>
     )
   }
